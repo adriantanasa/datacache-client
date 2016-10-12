@@ -1,7 +1,7 @@
 {
   "name": "datacache-client",
   "version": "1.0.0",
-  "description": "IBM Bluemix DataCache client for Node JS",
+  "description": "Node JS request-promise based client for IBM Bluemix Data Cache service.",
   "main": "index.js",
   "devDependencies": {
     "chai": "^3.5.0",
@@ -31,7 +31,8 @@
     "data cache client",
     "bluemix cache",
     "data cache",
-    "ibm data cache"
+    "ibm data cache",
+    "bluemix data cache"
   ],
   "author": "Adrian Tanasa <adrian_tanasa@yahoo.com>",
   "license": "MIT",

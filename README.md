@@ -12,7 +12,7 @@ NodeJS request-promise based client for IBM Bluemix Data Cache service.
 npm install datacache-client
 ```
 
-Using the DataCache storage connector:
+Using the Data Cache client in a Node JS application:
 
 ```javascript
 var DataCacheClient = require('datacache-client');
@@ -22,10 +22,10 @@ var dcClient = new DataCacheClient();
 dcClient.put('key-name', {item: 'test'})
 	.then(function(resp) {
     	// data saved - continue your logic
-        debug('Data saved to storage at key "key-name"');
+        console.log('Data saved to storage at key "key-name"');
 	}).catch(function(err) {
     	// something went wrong
-        debug('Failed to save data to storage');
+        console.log('Failed to save data to storage');
     });
 
 // get data from storage
@@ -33,20 +33,20 @@ dcClient.get('key-name')
 	.then(function(resp) {
     	// data loaded in resp.body
         var obj = resp.body;
-        debug('Object returned with item = %s', obj.item);
+        console.log('Object returned with item ' + obj.item);
 	}).catch(function(err) {
     	// no data found
-        debug('Failed to retrieve data from storage');
+        console.log('Failed to retrieve data from storage');
     });
     
 // destroy data
 dcClient.destroy('key-name')
 	.then(function(resp) {
     	// data deleted from storage
-        debug('Data deleted for '"key-name"');
+        console.log('Data deleted for "key-name"');
 	}).catch(function(err) {
     	// no data found
-        debug('Failed to delete data from storage');
+        console.log('Failed to delete data from storage');
     });
 ```
 ## API
@@ -157,8 +157,8 @@ For non-Bluemix environments can be customized as a namespace for data.
 - 'pessimistic'
 
 ### contentType
-- 'application/json' - default - turns on the JSON encoder/decoder for session data
-- other - saves session data as plain text
+- 'application/json' - default - turns on the JSON encoder/decoder for stored data
+- other - saves data as plain text
 
 ### secure
 - true - default - uses 'restResourceSecure' as store entrypoint
@@ -211,6 +211,7 @@ applications:
 
 - http://www.ibm.com/support/knowledgecenter/SSTVLU_8.6.0/com.ibm.websphere.extremescale.doc/tdevrest.html
 - https://console.ng.bluemix.net/docs/services/DataCache/index.html#datac001
+- https://github.com/request/request-promise
 
 
 [npm-image]: https://img.shields.io/npm/v/datacache-client.svg
