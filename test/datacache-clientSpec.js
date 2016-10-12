@@ -203,7 +203,7 @@ describe('Testsuite - DataCacheClient', function() {
             });
         });
 
-        it('Testcase - GET data from datacache', function() {
+        it('Testcase - DELETE data from datacache', function() {
             nockScope = nock('https://restSecureDomain.tst');
             nockScope.matchHeader('Authorization',
                 'Basic ' + (new Buffer(minimalParams.username + ':' + minimalParams.password).toString('base64')))
